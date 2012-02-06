@@ -36,7 +36,7 @@ module Tire
       end
 
       def more_like_this(options={})
-	@value = { :more_like_this => { options } }
+	@value = { :more_like_this => options }
 	@value
       end
 
