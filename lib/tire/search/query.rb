@@ -35,6 +35,11 @@ module Tire
         @value
       end
 
+      def more_like_this(options={})
+	@value = { :more_like_this => { options } }
+	@value
+      end
+
       def boolean(options={}, &block)
         @boolean ||= BooleanQuery.new(options)
         block.arity < 1 ? @boolean.instance_eval(&block) : block.call(@boolean) if block_given?
